@@ -44,7 +44,7 @@ CREATE TABLE food(
 CREATE TABLE orders(
     order_ID int AUTO_INCREMENT,
 
-    user_ID varchar(25) NOT NULL,
+    user_ID int NOT NULL,
     food_ID int NOT NULL,
 
     delivery_address varchar(50) NOT NULL,
