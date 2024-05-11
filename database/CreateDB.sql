@@ -1,6 +1,6 @@
-CREATE DATABASE KhudaLagse_DB;
+CREATE DATABASE Craving_DB;
 
-Use KhudaLagse_DB;
+Use Craving_DB;
 
 CREATE TABLE account(
     user_ID int AUTO INCREMENT,
