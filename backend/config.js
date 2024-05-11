@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    database: 'KhudaLagse_DB'
+    database: 'Craving_DB'
 });
 connection.connect(
     (err) => {
