@@ -54,7 +54,7 @@ header nav a:hover::before{
     width: 100%;
 }
 .container{
-    padding: 30px;
+    padding: 50px;
 }
 .text-box1{
     background-color:rgb(255, 255, 255);color:rgb(0, 0, 0);padding:20px;
@@ -102,9 +102,25 @@ header nav a:hover::before{
     
 }
 
-  .foodpanda-btn:hover,.pathaofood-btn:hover,.hungrynaki-btn:hover,.ubereats-btn:hover {
+.foodpanda-btn:hover {
     transition-duration: 0.4s;
-    background-color: #04AA6D;
+    background-color: #e0197d;
     color: white;
   }
+  .pathaofood-btn:hover {
+    transition-duration: 0.4s;
+    background-color: #f74403;
+    color: white;
+  }
+  .hungrynaki-btn:hover {
+    transition-duration: 0.4s;
+    background-color: #e07619;
+    color: white;
+  }
+  .ubereats-btn:hover {
+    transition-duration: 0.4s;
+    background-color: #060405;
+    color: white;
+  }
+
 
