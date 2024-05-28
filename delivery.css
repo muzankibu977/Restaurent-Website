@@ -93,7 +93,7 @@ header nav a:hover::before{
     width: 80%;
     height: 80px;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 0px;
     margin: 20px 0px;
     border: slategrey;
     font-size: 30px;
