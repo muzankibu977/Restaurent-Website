@@ -61,7 +61,7 @@ header nav a:hover::before{
 }
 .text-box1:hover {
     transition-duration: 0.4s;
-    background-color: #04AA6D;
+    background-color: #fc1313;
     color: white;
   }
   .Service-box{
