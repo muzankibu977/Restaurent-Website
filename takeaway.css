@@ -1,17 +1,69 @@
-*{
-    padding: 0;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
 body{
-    background-image: url(./background5.jpg);
-    background-size: cover;
-    background-position: 0px -50px;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    background-image: url(background5.jpg);
+}
+.order-box{
+    width: 400px;
+    background-color:#e9670a;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    border-color: #ccc;
+    border-radius: 3px;
+    transition: box-shadow 0.3s ease;
+
+}
+.order-box:hover{ 
+    box-shadow: 10px 10px 20px rgba(36, 36, 36, 0.5);
+    background-color: #020202;
+    color: #ffffff; 
+
+} 
+
+h1{
+    text-align: center;
+    padding: top 20px;
+    font-weight: bold;
+}
+h4{
+    text-align: center;
+    font-weight: bold;
+}
+form{
+    width: 350px;
+    margin-left: 20px;
+}
+form label{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
+    margin-top: 20px;
+    font-size: 18px;
+}
+form input{
+    width: 350px;
+    padding: 10px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 6px;
+    outline: none;
+}
+input[type="button"]
+{
+    width: 350px;
+    height: 35px;
+    margin-top: 20px;
+    border: none;
+    background-color: green;
+}
+
+p{
+    text-align:center;
+    padding: 2px;
+    font-size: 15px;
+}
+.pera-2 a{
+    color: blue;
+    cursor: pointer;
 }
 header{
     position: absolute;
@@ -23,32 +75,4 @@ header{
     padding: 40px;
     color: rgb(0, 0, 0);
 }
-header:hover{
-    background-color:rgb(255, 255, 255);
-    transition-duration: 0.4s;
-}
-header nav{
-    width: 55%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 26px;
-}
-header nav a{
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    position: relative;
-}
-header nav a::before{
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    background-color: rgb(0, 0, 0);
-    width: 0%;
-    height: 2.5px;
-    transition: .3s;
-}
-header nav a:hover::before{
-    width: 100%;
-}
+
