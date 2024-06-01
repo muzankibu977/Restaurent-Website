@@ -136,3 +136,9 @@ header nav a:hover::before{
 .change-form .Register-form{
     transform: translateX(0%);
 }
+
+
+input.error, select.error{
+    border-color: red;
+    border-width: 3px;
+}
