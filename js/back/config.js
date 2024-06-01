@@ -33,7 +33,7 @@ app.post('/profile', function (req, res) {
         password: req.body.password
     };
 
-    const query =  `INSERT INTO user (username, email, password)
+    const query =  `INSERT INTO account (username, email, password)
                     VALUES('${user.username}', '${user.email}', '${user.password}');`;
     console.log(query);
 
@@ -54,11 +54,11 @@ app.post('/login', function (req, res) {
 
     const user = {
         email: req.body.email,
-        password: req.body.password
+        password: req.body.password,
     };
 
     const query =   `SELECT * 
-                     FROM user WHERE email = '${user.email}' AND password = '${user.password}';`;
+                     FROM account WHERE email = '${user.email}' AND password = '${user.password}';`;
     console.log(query);
 
     db_connection.query(query,
@@ -77,7 +77,7 @@ app.post('/login', function (req, res) {
 app.get('/profile', function(req, res){
     email = req.query.email;
     const query =  `SELECT username, email
-                    FROM user
+                    FROM account
                     WHERE email = "${email}";`;
 
     db_connection.query(query, function(err, result){
@@ -99,7 +99,7 @@ app.put('/profile', function(req, res){
         old_email: req.body.old_email
     };
 
-    const query =  `UPDATE user
+    const query =  `UPDATE account
                     SET username = '${profile.username}', 
                     email = '${profile.email}'
                     WHERE email = '${profile.old_email}';`;
@@ -116,7 +116,7 @@ app.put('/profile', function(req, res){
 
 
 app.delete("/profile", function(req, res){
-    const query =   `DELETE FROM user
+    const query =   `DELETE FROM account
                      WHERE email = '${req.body.email}';`;
 
     db_connection.query(query, function(err, result){

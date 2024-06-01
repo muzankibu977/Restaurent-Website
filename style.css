@@ -70,6 +70,7 @@ header nav a:hover::before{
     height: 100%;
     position: absolute;
     transition: all .5s ease;
+    overflow:auto;
 }
 .Form-box .Register-form{
     transform: translateX(-100%);
@@ -138,7 +139,15 @@ header nav a:hover::before{
 }
 
 
-input.error, select.error{
+input.error{
     border-color: red;
     border-width: 3px;
+}
+
+p.prompt{
+    Color: red;
+    text-align: left;
+    white-space: pre-line;
+    margin-top: 0px;
+    padding: 0px;
 }
