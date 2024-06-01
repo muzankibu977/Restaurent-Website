@@ -6,8 +6,8 @@ body {
 }
 
 .contact-section {
-    background: url('file:///Tanveer/Contact%20Us/image.avif') no-repeat center center/cover;
-    color: #fff;
+    background: url('background7.jpg') no-repeat center center/cover;
+    color: #000000;
     padding: 50px 0;
 }
 
@@ -28,7 +28,7 @@ body {
 }
 
 .section-header p {
-    color: #fff;
+    color: #000000;
 }
 
 .row {
@@ -46,13 +46,7 @@ body {
     margin-bottom: 30px;
 }
 
-.contact-info-icon {
-    height: 70px;
-    width: 70px;
-    background-color: #fff;
-    text-align: center;
-    border-radius: 50%;
-}
+
 
 .contact-info-icon i {
     font-size: 30px;
@@ -64,13 +58,13 @@ body {
 }
 
 .contact-info-content h4 {
-    color: #1da9c0;
+    color: #000000;
     font-size: 1.4em;
     margin-bottom: 5px;
 }
 
 .contact-info-content p {
-    color: #fff;
+    color: #000000;
     font-size: 1em;
 }
 

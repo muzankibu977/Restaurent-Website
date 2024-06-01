@@ -25,7 +25,7 @@ body {
 }
 
 .upper-header-middle {
-    margin-left: -150px;
+    margin-left: -100px;
     font-family: Montserrat;
     font-size: 18px;
     font-weight: 500;
@@ -89,7 +89,7 @@ body {
     margin-left: 40px;
     margin-right: 20px;
     padding-left: 20px;
-    width: 84%;
+    width: 75%;
     height: 40px;
     border-radius: 20px;
     border: 1px solid rgb(196, 195, 195);
