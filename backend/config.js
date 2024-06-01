@@ -82,7 +82,7 @@ app.post('/login', function (req, res) {
 })
 
 
-app.get('/api/profile', function(req, res){
+app.get('/profile', function(req, res){
     email = req.query.email;
     const query =  `SELECT username, email
                     FROM user
@@ -97,6 +97,30 @@ app.get('/api/profile', function(req, res){
         }
     });
 });
+
+
+
+app.put('/profile', function(req, res){
+    const profile = {
+        username: req.body.username,
+        email: req.body.email,
+        old_email: req.body.old_email
+    };
+
+    const query =  `UPDATE user
+                    SET username = '${profile.username}', 
+                    email = '${profile.email}'
+                    WHERE email = '${profile.old_email}';`;
+
+    db_connection.query(query, function(err, result){
+        if(err){
+            res.json({error: err,});
+        } else {
+            console.log(result);
+            res.json({result: result,});
+        }
+    });
+})
 
 
 
