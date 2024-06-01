@@ -123,6 +123,22 @@ app.put('/profile', function(req, res){
 })
 
 
+app.delete("/profile", function(req, res){
+    const query =   `DELETE FROM user
+                     WHERE email = '${req.body.email}';`;
+
+    db_connection.query(query, function(err, result){
+        if(err){
+            console.log(err);
+            res.json({error: err,});
+        } else {
+            console.log(result);
+            res.json({result: result});
+        }
+    });
+})
+
+
 
 app.listen(3000, () => {
     console.log('Server is running on port 3000', 'url: http://localhost:3000/');
