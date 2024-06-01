@@ -81,6 +81,25 @@ app.post('/login', function (req, res) {
     );
 })
 
+
+app.get('/api/profile', function(req, res){
+    email = req.query.email;
+    const query =  `SELECT username, email
+                    FROM user
+                    WHERE email = "${email}";`;
+
+    db_connection.query(query, function(err, result){
+        if(err){
+            console.log(err);
+            res.json({error: err},);
+        } else {
+            res.json({result: result[0],});
+        }
+    });
+});
+
+
+
 app.listen(3000, () => {
     console.log('Server is running on port 3000', 'url: http://localhost:3000/');
 });
