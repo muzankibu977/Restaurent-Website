@@ -1,30 +1,31 @@
+const port = 3000;
 
-let mysql = require('mysql');
-const express = require('express');
-const bodyParser = require('body-parser');
-var cors = require('cors');
-const app = express();
+const mysql = require("mysql");
+const express = require("express");
+const cors = require('cors');
+
+let app = express();
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-var connection = mysql.createConnection({
+app.use(express.json());
+let db_connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     database: 'Craving_DB'
 });
-connection.connect(
-    (err) => {
-        if (err) {
+db_connection.connect(
+    function(err){
+        if(err){
             console.log(err);
-        } else {
-            console.log('DB connected successfully!');
+        } 
+        else{
+            console.log('Database connected successfully.');
         }
     }
 );
 
 
 // add user post method
-app.post('/add-user', function (req, res) {
+app.post('/profile', function (req, res) {
 
     const user = {
         username: req.body.username,
@@ -32,23 +33,17 @@ app.post('/add-user', function (req, res) {
         password: req.body.password
     };
 
-    const query = `INSERT INTO user
-                    (username, email, password)
-                    VALUES
-                    ('${user.username}', '${user.email}', '${user.password}');`;
+    const query =  `INSERT INTO user (username, email, password)
+                    VALUES('${user.username}', '${user.email}', '${user.password}');`;
     console.log(query);
 
-    connection.query(query,
+    db_connection.query(query,
         function (err, result) {
             if (err) {
-                res.json({
-                    error: err,
-                })
+                res.json({error: err,})
             } else {
                 console.log(result);
-                res.json({
-                    result: result,
-                })
+                res.json({result: result,})
             }
         }
     );
@@ -62,20 +57,17 @@ app.post('/login', function (req, res) {
         password: req.body.password
     };
 
-    const query = `SELECT * FROM user WHERE email = '${user.email}' AND password = '${user.password}';`;
+    const query =   `SELECT * 
+                     FROM user WHERE email = '${user.email}' AND password = '${user.password}';`;
     console.log(query);
 
-    connection.query(query,
+    db_connection.query(query,
         function (err, result) {
             if (err) {
-                res.json({
-                    error: err,
-                })
+                res.json({error: err,})
             } else {
                 console.log(result);
-                res.json({
-                    result: result,
-                })
+                res.json({ result: result,})
             }
         }
     );
@@ -140,6 +132,9 @@ app.delete("/profile", function(req, res){
 
 
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000', 'url: http://localhost:3000/');
-});
+// starting server
+app.listen(port, 
+    function(){
+    console.log("Server here! I am listening for your HTTP requests on port " + port + "!");
+    }
+);

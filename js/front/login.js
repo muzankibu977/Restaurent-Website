@@ -14,8 +14,6 @@ login_btn.addEventListener("click", () => {
 
 
 
-
-
 /*Code by Abrar Ur Alam 2211447042*/
 
 function validateUsername(username){
