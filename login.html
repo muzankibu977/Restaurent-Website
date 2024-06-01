@@ -37,7 +37,7 @@
                 </span>
                 <h5>Forget password ?</h5>
             </div>
-            <button type="submit" class="submit-btn">Submit</button>
+            <button type="submit" class="submit-btn" onclick="validate_login()">Submit</button>
             <h5 class="Register-btn">Don't have an account? Register</h5>
         </form>
         <form class="Register-form">
@@ -47,21 +47,30 @@
                 <label>Username</label>
                 <ion-icon name="person-outline"></ion-icon>
             </div>
+            <p id="register_username_prompt" class="prompt" hidden></p>
             <div class="input-box">
                 <input type="text" id="register_email_field" required>
                 <label>Email</label>
                 <ion-icon name="mail-outline"></ion-icon>
             </div>
+            <p id="register_email_prompt" class="prompt" hidden></p>
             <div class="input-box">
                 <input type="password" id="register_password_field" required>
                 <label>Password</label>
                 <ion-icon name="lock-closed-outline"></ion-icon>
             </div>
+            <p id="register_password_prompt" class="prompt" hidden></p>
+            <div class="input-box">
+                <input type="password" id="register_retype_password_field" required>
+                <label>Password</label>
+                <ion-icon name="lock-closed-outline"></ion-icon>
+            </div>
+            <p id="register_retype_password_prompt" class="prompt" hidden></p>
             <div class="checkbox">
                 <input type="checkbox" id="register-checkbox">
                 <label for="register-checkbox">I agree to the terms & conditions</label>
             </div>
-            <button type="button" class="submit-btn" id="register_submit_btn" onclick="register()">Submit</button>
+            <button type="button" class="submit-btn" id="register_submit_btn" onclick="validate_registration()">Submit</button>
             <h5 class="Login-btn">Registered before? Login</h5>
         </form>
     </div>
