@@ -12,7 +12,7 @@ html, body {
 .section {
     width: 100%;
     min-height: 100vh;
-    background: url('file:///Tanveer/image.avif') no-repeat center center/cover;
+    background: url('background6.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
